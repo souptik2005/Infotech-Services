@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #3e54d3;
+  --color-brand-dark: #3246b8;
+  --color-brand-tint: #f5f7fe;
+}
+
+@layer base {
+  html {
+    font-family: "Roboto", ui-sans-serif, system-ui, sans-serif;
+    color: #111827;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Converts white PNG icons (Contact-icon) to brand blue (#3e54d3) on button hover */
+.icon-white-to-brand {
+  transition: filter 200ms ease;
+}
+
+.group:hover .icon-white-to-brand,
+.group:focus-visible .icon-white-to-brand {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(82%) saturate(2250%)
+    hue-rotate(222deg) brightness(89%) contrast(92%);
+}
+
+/* Converts dark PNG drawer icons to brand blue (#3e54d3) when active or hovered */
+.drawer-icon-dark {
+  filter: brightness(0) saturate(100%) opacity(0.85);
+  transition: filter 180ms ease;
+}
+
+.drawer-icon-brand {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(82%) saturate(2250%)
+    hue-rotate(222deg) brightness(89%) contrast(92%);
+  transition: filter 180ms ease;
+}
